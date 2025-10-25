@@ -1,0 +1,46 @@
+using System;
+
+namespace Module3Example
+{
+    public class Book
+    {
+        // Fields / auto-properties
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public int Pages { get; set; }
+
+        // Constructor
+        public Book(string title, string author, int pages)
+        {
+            Title = title;
+            Author = author;
+            Pages = pages;
+        }
+
+        // Method
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Title: {Title}\nAuthor: {Author}\nPages: {Pages}");
+        }
+
+        // Overriding ToString (object type concept)
+        public override string ToString()
+        {
+            return $"{Title} by {Author}, {Pages} pages";
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create an instance (object) of the Book class
+            Book myBook = new Book("The Hobbit", "J.R.R. Tolkien", 310);
+            
+            // Use the object
+            myBook.DisplayInfo();
+            
+            Console.WriteLine("Using ToString(): " + myBook.ToString());
+        }
+    }
+}
